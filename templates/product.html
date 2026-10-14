@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+    <h1>Products</h1>
+    <p>These products are fetched from MySQL.</p>
+
+    {% for p in products %}
+    <div>
+        <h2>Product ID: {{ p[0] }}</h2>
+        <h3>{{ p[1] }}</h3>
+        <p>Price: ₹{{ p[2] }}</p>
+    </div>
+    <hr>
+    {% else %}
+    <p>No products found.</p>
+    {% endfor %}
+
+    <a href="/">Back to Home</a>
+</body>
+</html>

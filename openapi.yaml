@@ -1,0 +1,35 @@
+
+openapi: 3.1.0
+info:
+  title: Product Display API
+  version: 1.0.0
+  description: A simple FastAPI application that displays MySQL products using Jinja2 templates.
+
+servers:
+  - url: http://127.0.0.1:8000
+    description: Local development server
+
+paths:
+  /:
+    get:
+      summary: Display the home page
+      responses:
+        "200":
+          description: Home page displayed successfully
+          content:
+            text/html:
+              schema:
+                type: string
+
+  /products:
+    get:
+      summary: Display products from MySQL
+      responses:
+        "200":
+          description: Product page displayed successfully
+          content:
+            text/html:
+              schema:
+                type: string
+        "500":
+          description: Internal server error
